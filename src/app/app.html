@@ -1,0 +1,23 @@
+<ion-menu  [content]="mycontent">
+  <ion-header>
+   <ion-toolbar>
+     <ion-title>HOT Menus</ion-title>
+   </ion-toolbar>
+ </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item><ion-icon ios="ios-settings" md="md-settings"></ion-icon> Dashboard</ion-item>
+    <ion-item><ion-icon ios="ios-person" md="md-person"></ion-icon> Users</ion-item>
+    <ion-item><ion-icon ios="ios-person" md="md-person"></ion-icon> Roles</ion-item>
+    <ion-item><ion-icon ios="ios-person" md="md-person"></ion-icon> Clients</ion-item>
+    <ion-item><ion-icon ios="ios-person" md="md-person"></ion-icon> Subvendors</ion-item>
+    <ion-item><ion-icon ios="ios-document" md="md-document"></ion-icon> Requirements</ion-item>
+    <ion-item><ion-icon ios="ios-person" md="md-person"></ion-icon> Candidates</ion-item>
+    <ion-item><ion-icon ios="ios-person" md="md-person"></ion-icon> Screeners</ion-item>
+    <ion-item><ion-icon ios="ios-help" md="md-help"></ion-icon> Questions</ion-item>
+    <ion-item><ion-icon ios="ios-key" md="md-key"></ion-icon> Accounts</ion-item>
+  </ion-list>
+</ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <div class="header">
+      <div class="left">
+        <ion-icon ios="ios-menu" md="md-menu" (click)="toggleMenu()"></ion-icon>
+      </div>
+      <div class="center">
+        <img src="https://d2ue829my6ap69.cloudfront.net/images/Logo_white.png" alt="">
+      </div>
+      <div class="rigth">
+          <ion-icon name="more" (click)="presentPopover($event)"></ion-icon>
+      </div>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+  <div class="dash_body">
+    <ion-card>
+      <ion-card-content>
+        <div class="card-body">
+            <div class="body-left">
+              <ion-icon class="_green" ios="ios-contact" md="md-contact"></ion-icon>
+            </div>
+            <div class="body-right">
+              <h1 class="_green">925</h1>
+              <span>Total Users</span>
+            </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="card-body">
+            <div class="body-left">
+              <ion-icon class="_blue" ios="ios-contact" md="md-contact"></ion-icon>
+            </div>
+            <div class="body-right">
+              <h1 class="_blue">1242</h1>
+              <span>Total Clients</span>
+            </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="card-body">
+            <div class="body-left">
+              <ion-icon class="_purple" ios="ios-contact" md="md-contact"></ion-icon>
+            </div>
+            <div class="body-right">
+              <h1 class="_purple">43234</h1>
+              <span>Total Requirements</span>
+            </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <div class="card-body">
+            <div class="body-left">
+              <ion-icon class="_red" ios="ios-contact" md="md-contact"></ion-icon>
+            </div>
+            <div class="body-right">
+              <h1 class="_red">4534534</h1>
+              <span>Total Candidates</span>
+            </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+
+</ion-content>
