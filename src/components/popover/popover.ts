@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { ViewController,NavController } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 import { UtilsProvider } from '../../providers/utils/utils';
 import { LoginPage } from '../../pages/login/login';
+import { SettingsPage } from '../../pages/settings/settings';
+import {App} from 'ionic-angular';
 /**
  * Generated class for the PopoverComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
+ * Auther: Shekh Rizwan
+ * Team: HOT Team
  * Components.
  */
 @Component({
@@ -15,18 +17,27 @@ import { LoginPage } from '../../pages/login/login';
 export class PopoverComponent {
   text: string;
   constructor(public viewCtrl: ViewController,
-              public util: UtilsProvider,
-              public navCtrl: NavController) {
+              public util: UtilsProvider,public app: App) {
   }
 
-  close() {
+  // This mathod is use to navigate the page from popover menu
+  gotoPage(pageName) {
     this.viewCtrl.dismiss();
+    if(pageName === "SETTINGS"){
+      this.app.getActiveNav().setRoot(SettingsPage);
+    }else if(pageName === "PROFILE"){
+
+    }else if(pageName === "VIDEOS"){
+      
+    }else if(pageName === "CHANGE PASSWORD"){
+      
+    }
   }
 
   logout(){
-      this.close();
+      this.viewCtrl.dismiss();
       this.util.removeAllLocalStorage();
-      this.navCtrl.push(LoginPage);
+      this.app.getActiveNav().setRoot(LoginPage);
   }
 
 }

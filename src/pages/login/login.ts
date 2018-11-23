@@ -61,7 +61,7 @@ export class LoginPage {
       'password':this.password
     }
     this.restProvider.getToken(getToken)
-    .then(token => {
+    .then((token:any) => {
       this.util.saveToken(token.token);
       this.util.saveTokenTime(new Date().getTime());
         this.restProvider.login(jsonData,token.token)

@@ -11,23 +11,6 @@ export class HomePage {
     this.menuCtrl.enable(true);
   }
 
-  presentPopover(myEvent) {
-   let popover = this.popoverCtrl.create(PopoverComponent);
-   popover.present({
-     ev: myEvent
-   });
- }
 
- openMenu() {
-  this.menuCtrl.open();
-  }
-
-  closeMenu() {
-    this.menuCtrl.close();
-  }
-
-  toggleMenu() {
-    this.menuCtrl.toggle();
-  }
 
 }

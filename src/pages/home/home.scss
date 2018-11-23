@@ -38,55 +38,41 @@ page-home {
 
   .dash_body{
     text-align: center;
-    .card-body{
+    .card-container{
       display: flex;
-      .body-left{
-        flex: 1;
+      .left{
+        margin-right: 5px !important;
+        margin-bottom: 5px !important;
+        margin-top: 5px !important;
+      }
+      .right{
+        margin-top: auto !important;
+        margin-left: 5px !important;
+        margin-bottom: 5px !important;
+        margin-top: 5px !important;
+      }
+    .card-body{
+      .body-top{
+        display: flex;
         ion-icon{
-          font-size: 80px;
-        }
-        ._green{
-          color: #68b828;
-        }
-        ._purple{
-          color: #7c38bc;
-        }
-        ._blue{
-          color: #0e62c7;
-        }
-        ._red{
-          color: red;
+          font-size: 70px;
+          flex: 1;
         }
       }
-      .body-right{
-        flex: 3;
-        ._green{
-          color: #68b828;
-        }
-        ._purple{
-          color: #7c38bc;
-        }
-        ._blue{
-          color: #0e62c7;
-        }
-        ._red{
-          color: red;
-        }
-        ._white{
-          color: #fff;
+      .body-bottom{
+        span{
+          font-size: 14px;
         }
         h1{
           margin: 0px;
           padding: 0px;
-          margin-top: 13px;
-          font-size: 27px;
+          font-size: 25px;
           font-weight: bold;
-        }
-        span{
-          font-size: 18px;
+          flex: 2;
+          margin-top: 10px;
         }
       }
+     }
     }
-
   }
 }
