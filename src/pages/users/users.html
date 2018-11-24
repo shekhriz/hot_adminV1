@@ -9,6 +9,28 @@
 </ion-header>
 
 
-<ion-content padding>
-    I am in Users page
+<ion-content>
+    <div class="addBtn"> 
+        <h1>Users</h1>
+        <button ion-button color="dark" outline (click)="gotoAddUser()">Add User</button>
+    </div>
+    <ion-list>
+            <div class="body" *ngFor="let user of userObj">
+                <div class="body-left">
+                    <button ion-item (click)="gotoEditUser(user.id)">
+                        <h1> {{ user.firstName }} {{user.lastName}}({{user.role}})</h1>
+                        <span>{{user.emailId}}</span>
+                        <div class="inner-body">
+                            <label class="inner-left">Status :  <span [ngClass]="{'_green':user.enabledStatus=='Active'}">{{ user.enabledStatus }}</span></label>
+                            <label class="inner-right">Rating : <span [ngClass]="{'_blue':user.ratingFlag!='NA'}">{{ user.ratingFlag }}</span></label>
+                        </div>
+                    </button>  
+                </div>
+                <div class="body-right">   
+                    <button ion-item (click)="presentPopover($event)">  
+                            <ion-icon ios="ios-menu" md="md-menu" ></ion-icon>
+                    </button>  
+                </div>
+            </div>
+    </ion-list>
 </ion-content>

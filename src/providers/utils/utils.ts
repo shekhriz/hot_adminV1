@@ -11,7 +11,6 @@ import { ToastController } from 'ionic-angular';
 export class UtilsProvider {
 
   constructor(private toastCtrl: ToastController) {
-    console.log('Hello UtilsProvider Provider');
   }
 
   // Code for Toaster
@@ -24,7 +23,7 @@ export class UtilsProvider {
              showCloseButton: true,
              cssClass: "toastCssError",
             });
-            toast.present();
+            toast.present();  
         }else if(type == 'SUCCESS'){
           let toast = this.toastCtrl.create({
              message: msg,
@@ -32,6 +31,15 @@ export class UtilsProvider {
              position: 'top',
              showCloseButton: true,
              cssClass: "toastCssSuccess",
+            });
+            toast.present();
+        }else if(type == 'TIMEOUT'){
+          let toast = this.toastCtrl.create({
+             message: msg,
+             duration: 3000,
+             position: 'top',
+             showCloseButton: true,
+             cssClass: "toastCssTimeOut",
             });
             toast.present();
         }
@@ -46,6 +54,9 @@ export class UtilsProvider {
       }
       saveTokenTime(time){
         window.localStorage.setItem( 'userTokenStartTime',JSON.stringify(time));
+      }
+      getTokenTime(){
+        return JSON.parse(window.localStorage.getItem('userTokenStartTime'));
       }
       removeToken(){
         window.localStorage.setItem( 'token',null);

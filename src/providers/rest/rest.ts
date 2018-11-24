@@ -65,6 +65,132 @@ apiUrl = '/';
     });
   }
 
+  refreshToken(token) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'security/refresh',{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
+  trackRec(token) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'hot/requirement/trackRec',{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
+  trackTS(token) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'hot/requirement/trackTS',{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });  
+  }
+
+  getRequirementStatics(data,token) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'hot/getRequirementStatics', JSON.stringify(data),{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  getDashBoardCounts(data,token) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.apiUrl+'hot/getDashBoardCounts', JSON.stringify(data),{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  users(token) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'hot/users',{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
+  vpOfSales(id,token) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'hot/requirement/displayalltechrec/'+id+'/VpOfSales',{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(data => {
+        resolve(data);    
+      }, err => {
+        console.log(err);
+      });
+    }); 
+  } 
+
+  groupName(token) {   
+    return new Promise(resolve => {  
+      this.http.get(this.apiUrl+'hot/roles/groupName',{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
+  managerOfRecruiting(id,token) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'hot/requirement/displayalltechrec/'+id+'/ManagerOfRecruiting',{
+        headers: new HttpHeaders().set('Authorization', token)
+                .append('Accept', 'application/json;odata=verbose')
+                .append('Content-Type','application/json')
+       }).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
 
 
 }

@@ -33,6 +33,11 @@ ion-header{
       background: green;
     }
 }
+.toastCssTimeOut{
+  .toast-wrapper {
+    background: #2a7aab;
+  }
+}
 .bc-info{
   background-color: #40bbea !important;
 }
@@ -46,11 +51,6 @@ ion-header{
 }
 .alert-md .alert-title{
   font-size: 20px !important;
-}
-
-.button-outline-md{
-  border-color: #40bbea !important;
-  color: #40bbea !important;
 }
 
 .button-full-md{
@@ -90,3 +90,15 @@ ion-header{
 ._white{
   color: #fff !important;
 }
+.commonFooter{
+  display: flex;
+  button{
+    min-height: 50px;
+  }
+}
+
+.astric{
+  color: red;
+  font-weight: bold;
+}
+

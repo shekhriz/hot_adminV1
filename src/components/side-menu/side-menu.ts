@@ -10,20 +10,21 @@ import {App} from 'ionic-angular';
  *
  * See https://angular.io/api/core/Component for more info on Angular
  * Components.
- */
+ */  
 @Component({
   selector: 'side-menu',
   templateUrl: 'side-menu.html'
 })
-export class SideMenuComponent {
-
+export class SideMenuComponent { 
+  activeTab:string='DASHBOARD';
   constructor(public menuCtrl: MenuController,public app: App) {
   }
 
   gotoState(stateName:string){
     console.log(stateName);
+    this.activeTab = stateName;
     this.menuCtrl.close();
-    if(stateName === 'USERS'){
+    if(stateName === 'USERS'){  
       this.app.getActiveNav().setRoot(UsersPage);
     }else if(stateName === 'DASHBOARD'){
       this.app.getActiveNav().setRoot(HomePage);

@@ -24,8 +24,8 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public util: UtilsProvider,
-              public loadingCtrl: LoadingController,
               public restProvider: RestProvider,
+              public loadingCtrl: LoadingController,
               public menuCtrl: MenuController) {
               this.menuCtrl.enable(false);
   }
